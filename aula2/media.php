@@ -1,5 +1,11 @@
 <?php
 
+// Exercício:
+// Crie uma função que solicite do usuário um número
+// indefinido de números, até que entre com o número 0.
+// Guarde os números em um array e, então, calcule e
+// imprima a média desses números.
+
 function calcularMedia() {
   $numeros = [];
 

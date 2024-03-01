@@ -1,5 +1,7 @@
 <?php
 
+// Imprima os meses do ano com seus respectivos números
+
 $meses = [
     1 => 'janeiro', 2 => 'fevereiro', 3 => 'março',
     4 => 'abril', 5 => 'maio', 6 => 'junho',
@@ -8,6 +10,6 @@ $meses = [
 ];
 
 foreach ( $meses as $indice => $mes ) {
-    echo "Número: $indice, Nome: $mes\n";
+    echo "Número: $indice, Nome: $mes\n", PHP_EOL;
 }
 ?>

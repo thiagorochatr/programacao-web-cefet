@@ -1,5 +1,24 @@
 <?php
 
+// 1) Crie um programa que solicite um nome
+// e uma idade do usuário, até que ele responda
+// "N" à pergunta
+// "Deseja incluir mais um? (S/N): ".
+// Em seguida, liste todos os usuários e suas
+// idades correspondentes. Ambas devem ser
+// armazenadas em um array na forma de uma mapa
+// 2) Acrescente ao problema a impressão da
+// maior idade, indicando o nome da pessoa e
+// sua idade. Por exemplo:
+// "A pessoa mais velha é Ana, que possui 92 anos."
+// 3) Acrescente ao problema a solicitação ao
+// usuário de um nome e retire-o da lista de
+// usuários. Ex: "Nome a remover: ".
+// Caso não encontrado, indique uma mensagem.
+
+// -> FAZENDO ESTE EXERCÍCIO UTILIZANDO UMA MANEIRA DE DIFERENCIAR OS USUÁRIOS
+// COM UM ARRAY DE OBJETOS, ASSIM O ID É ÚNICO.
+
 // DOES PHP HAVE A STRUCT DATA TYPE???????????
 // LOL
 

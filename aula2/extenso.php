@@ -1,5 +1,10 @@
 <?php
 
+// Exercício: Crie uma função chamada "extenso" que
+// receba um dia, um mês e um ano e retorne no formato
+// equivalente ao abaixo:
+//  29 de Fevereiro de 2024
+
 function extenso($dia, $mes, $ano) {
     $meses = [
         1 => 'janeiro', 2 => 'fevereiro', 3 => 'março',

@@ -1,5 +1,21 @@
 <?php
 
+// 1) Crie um programa que solicite um nome
+// e uma idade do usuário, até que ele responda
+// "N" à pergunta
+// "Deseja incluir mais um? (S/N): ".
+// Em seguida, liste todos os usuários e suas
+// idades correspondentes. Ambas devem ser
+// armazenadas em um array na forma de uma mapa
+// 2) Acrescente ao problema a impressão da
+// maior idade, indicando o nome da pessoa e
+// sua idade. Por exemplo:
+// "A pessoa mais velha é Ana, que possui 92 anos."
+// 3) Acrescente ao problema a solicitação ao
+// usuário de um nome e retire-o da lista de
+// usuários. Ex: "Nome a remover: ".
+// Caso não encontrado, indique uma mensagem.
+
 $usuarios = array();
 
 $nome = readline("Digite o nome do usuário: ");
