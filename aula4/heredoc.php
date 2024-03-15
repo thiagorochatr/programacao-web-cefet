@@ -1,5 +1,12 @@
 <?php
-
+// EXERCÍCIO 1
+// Dado o array abaixo, gere uma tabela HTML que apresente
+// seus dados. Use heredoc na solução.
+// EXERCÍCIO 2
+// Adiciona, à tabela criada anteriomente, um rodapé
+// que contenha o somatório do estoque e a média dos
+// preços dos produtos, nas respectivas colunas.
+// Use heredoc na solução.
 
 $produtos = [
   [
@@ -25,7 +32,6 @@ function salvarParaArquivo ( $html ) {
 
 $somaEstoque = 0;
 $somaPrecos = 0;
-$totalProdutos = count($produtos);
 
 $html = <<<'HTML'
   <style>
@@ -46,17 +52,19 @@ $html = <<<'HTML'
 HTML;
 
 foreach ($produtos as $p) {
-    $html .= "<tr>";
-    $html .= "<td>{$p['descricao']}</td>";
-    $html .= "<td>{$p['estoque']}</td>";
-    $html .= "<td>{$p['preco']}</td>";
-    $html .= "</tr>";
+  $html .= <<<LINE
+    <tr>
+      <td>{$p['descricao']}</td>
+      <td>{$p['estoque']}</td>
+      <td>{$p['preco']}</td>
+    </tr>
+  LINE;
 
-    $somaEstoque += $p[ 'estoque' ];
-    $somaPrecos += $p[ 'preco' ];
+  $somaEstoque += $p[ 'estoque' ];
+  $somaPrecos += $p[ 'preco' ];
 }
 
-$mediaProdutos = $somaPrecos/$totalProdutos;
+$mediaProdutos = $somaPrecos/count($produtos);
 
 $html .= <<<HTML
     </tbody>
