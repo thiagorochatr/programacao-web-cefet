@@ -1,0 +1,11 @@
+<?php
+EXERCÍCIOS
+
+1) Crie um arquivo remover.php que solicite do usuário
+   o Id de um produto e remova-o, se protegendo contra
+   ataques de injeção de SQL.
+
+2) Crie uma cópia do arquivo que lista os produtos.
+   Nela, faça com que agora seja exibido ao final
+   da listagem o somatório dos estoque e o maior dos
+   preços. Utilize apenas SQL para o cálculo.
