@@ -15,11 +15,11 @@ $preco = readline( 'Preço (R$): ' );
 
 $ps = $pdo->prepare( // PDOStatement
     "INSERT INTO produto ( descricao, estoque, preco )
-    VALUES ( :d, :e, :p )"
+    VALUES ( :descricao, :estoque, :preco )"
 );
 $ps->execute( [
-    'd' => $descricao,
-    'e' => $estoque,
-    'p' => $preco
+    'descricao' => $descricao,
+    'estoque' => $estoque,
+    'preco' => $preco
 ] );
 ?>

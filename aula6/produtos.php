@@ -1,16 +1,17 @@
 <?php
-// print_r( PDO::getAvailableDrivers() );
+
 $pdo = null;
 try {
     $pdo = new PDO(
-        'mysql:dbname=pw-aula6;host=localhost;charset=utf8',
+        'mysql:dbname=aula6;host=localhost;charset=utf8',
         'root',
-        '',
+        getenv('db_pass'),
         [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ]
     );
 } catch ( PDOException $e ) {
     die( 'Erro: ' . $e->getMessage() );
 }
+
 // PDOStatement
 $ps = $pdo->query( 'SELECT id, descricao, estoque, preco FROM produto' );
 $produtos = $ps->fetchAll();
@@ -28,8 +29,9 @@ imprimirDados( '', '', 'soma:', 'maior:' );
 imprimirDados( '', '', $linha[ 'somaEstoque' ], 'R$ ' . $linha[ 'maiorPreco' ] );
 
 function imprimirTracos() {
-    echo str_repeat( '-', 70 ), PHP_EOL;
+    echo str_repeat( '-', 65 ), PHP_EOL;
 }
+
 function imprimirDados( $id, $descricao, $estoque, $preco ) {
     echo str_pad( $id, 3 ),
         ' ', str_pad( $descricao, 40 ),
