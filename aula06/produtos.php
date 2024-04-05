@@ -5,7 +5,7 @@ try {
     $pdo = new PDO(
         'mysql:dbname=pw-aula6;host=localhost;charset=utf8',
         'root',
-        '',
+        getenv('db_pass'),
         [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ]
     );
 } catch ( PDOException $e ) {
