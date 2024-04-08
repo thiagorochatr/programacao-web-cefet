@@ -10,6 +10,7 @@ function contabilizar($array) {
     }
   }
   return $saida;
+  // mesma coisa -> return array_count_values($array);
 }
 
 $entrada = ['maçã', 'uva', 'maçã', 'banana', 'uva', 'goiaba', 'maçã', 'banana'];
