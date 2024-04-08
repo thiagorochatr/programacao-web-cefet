@@ -1,32 +1,53 @@
 <?php
 
+// Exercício 3 do ExerciciosFixacao-2024-1-Strings-Arrays.pdf
+
 $phones = [
-  '30044000',
-  '2225271727',
-  '08007024000',
-  '22987654321',
-  '30044000',
-  '08007024000'
+  '12345678',
+  '12345678',
+  '1234',
+  '1234',
+  '1234567890',
+  '(12) 3456-7890',
+  '(11) 1-1234-1234',
+  '(11) 1-1234-1234'
 ];
+
+function mask($phone): string {
+  $len = mb_strlen($phone);
+  if ($len == 8) {
+    return mb_substr($phone, 0, 4) . ' ' . mb_substr($phone, 4);
+  } else if ($len == 10) {
+    return '(' . mb_substr($phone, 0, 2) . ') ' . mb_substr($phone, 2, 4) . '-' . mb_substr($phone, 6);
+  } else if ($len == 11) {
+    if (mb_substr($phone, 0, 4) == '0800' || mb_substr($phone, 0, 4) == '0300' ) {
+      return mb_substr($phone, 0, 4) . ' ' . mb_substr($phone, 4, 3) . ' ' . mb_substr($phone, 7);
+    } else {
+      return '(' . mb_substr($phone, 0, 2) . ') ' . mb_substr($phone, 2, 1) . '-' . mb_substr($phone, 3, 4) . '-' . mb_substr($phone, 7);
+    }
+  } else {
+    return $phone;
+  }
+}
 
 function phoneRepeated( $phones ) {
   $count = [];
   foreach ( $phones as $t ) {
-    if ( isset( $count[ $t ] ) ) {
-      $count[ $t ]++;
+    $m = mask($t);
+    if ( isset( $count [ $m ] ) ) {
+      $count[ $m ]++;
     } else {
-      $count[ $t ] = 1;
+      $count[ $m ] = 1;
     }
   }
   $repeated = [];
   foreach ( $count as $phone => $value ) {
     if ( $value > 1 ) {
-      $repeated []= $phone;
+      $repeated [] = $phone;
     }
   }
   return $repeated;
 }
-
 
 print_r( phoneRepeated( $phones ) );
 

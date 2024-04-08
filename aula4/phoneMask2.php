@@ -1,20 +1,21 @@
 <?php
 
+// Exercício 2 do ExerciciosFixacao-2024-1-Strings-Arrays.pdf
+
 function mask($phone): string {
-  $clValue = $phone['cleanedValue'];
-  $len = mb_strlen($clValue);
+  $len = mb_strlen($phone);
   if ($len == 8) {
-    return mb_substr($clValue, 0, 4) . ' ' . mb_substr($clValue, 4);
+    return mb_substr($phone, 0, 4) . ' ' . mb_substr($phone, 4);
   } else if ($len == 10) {
-    return '(' . mb_substr($clValue, 0, 2) . ') ' . mb_substr($clValue, 2, 4) . '-' . mb_substr($clValue, 6);
+    return '(' . mb_substr($phone, 0, 2) . ') ' . mb_substr($phone, 2, 4) . '-' . mb_substr($phone, 6);
   } else if ($len == 11) {
-    if (mb_substr($clValue, 0, 4) == '0800' || mb_substr($clValue, 0, 4) == '0300' ) {
-      return mb_substr($clValue, 0, 4) . ' ' . mb_substr($clValue, 4, 3) . ' ' . mb_substr($clValue, 7);
+    if (mb_substr($phone, 0, 4) == '0800' || mb_substr($phone, 0, 4) == '0300' ) {
+      return mb_substr($phone, 0, 4) . ' ' . mb_substr($phone, 4, 3) . ' ' . mb_substr($phone, 7);
     } else {
-      return '(' . mb_substr($clValue, 0, 2) . ') ' . mb_substr($clValue, 2, 1) . '-' . mb_substr($clValue, 3, 4) . '-' . mb_substr($clValue, 7);
+      return '(' . mb_substr($phone, 0, 2) . ') ' . mb_substr($phone, 2, 1) . '-' . mb_substr($phone, 3, 4) . '-' . mb_substr($phone, 7);
     }
   } else {
-    return $phone['cleanedValue'];
+    return $phone;
   }
 }
 
@@ -42,16 +43,16 @@ $phones = [
 ];
 
 function formatAll ( &$phones ) {
-  echo 'Números formatados', PHP_EOL;
   foreach ($phones as $i => $p) {
-    $phones[ $i ][ 'formattedValue' ] = mask($p);
+    $phones[ $i ][ 'formattedValue' ] = mask($p['cleanedValue']);
   }
+  echo 'Números formatados', PHP_EOL;
 }
 
 formatAll($phones);
 
 foreach ($phones as $i => $p) {
   print_r($phones[$i]);
+  // mesmo que -> print_r($p);
 }
-
 ?>
