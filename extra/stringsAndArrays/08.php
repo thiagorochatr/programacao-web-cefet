@@ -1,8 +1,8 @@
 <?php
 
 function removerPontuacao($texto) {
-  $texto = preg_replace('/\s+/u', '', $texto);
-  $texto = preg_replace('/[,-.;:!?]/u', '', $texto);
+  $texto = str_replace([' '], '', $texto);
+  $texto = str_replace([',','-','.',';',':','!','?'], '', $texto);
   
   return $texto;
 }
