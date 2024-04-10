@@ -8,18 +8,28 @@ try {
 
   $cpfFrom = readline('CPF origem: ');
   $cpfTo = readline('CPF destino: ');
-  $amount = readline('Valor: ');
 
-  if ( cpfExists($cpfFrom, $pdo) && cpfExists($cpfTo, $pdo) && amountValid($cpfFrom, $amount, $pdo) ) {
-
-    $pdo->beginTransaction();
-    makeTransaction($cpfFrom, $cpfTo, $amount, $pdo);
-    $pdo->commit();
-    echo 'FUNCIONOU';
-
-  } else {
-    die('Erro em algum dado.');
+  if (!cpfExists($cpfFrom, $pdo)) {
+    die('Conta origem não existe.');
   }
+  if (!cpfExists($cpfTo, $pdo)) {
+    die('Conta destino não existe.');
+  }
+
+  $amount = readline('Valor a transferir: ');
+
+  if (!is_numeric($amount) OR $amount <= 0) {
+    die('Valor deve ser um número positivo.');
+  }
+  if (!amountValid($cpfFrom, $amount, $pdo)) {
+    die('Conta origem sem saldo suficiente.');
+  }
+
+  $pdo->beginTransaction();
+  makeTransaction($cpfFrom, $cpfTo, $amount, $pdo);
+  $pdo->commit();
+  echo 'Transferido com sucesso.';
+
 } catch (PDOException $e) {
   if($pdo->inTransaction()){
     $pdo->rollBack();
