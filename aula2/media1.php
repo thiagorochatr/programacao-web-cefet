@@ -16,7 +16,6 @@ function calcularMedia() {
     
     if(is_numeric($num)) {
       if ($num == 0) {
-        // Calcular a média quando 0 é inserido
         if (count($numeros) === 0) {
           echo "Nenhum número foi digitado.\n";
         } else {
@@ -26,7 +25,6 @@ function calcularMedia() {
         }
         break;
       } else {
-        // Adicionar número ao array
         $numeros[] = $num;
       }
     } else {
@@ -35,7 +33,6 @@ function calcularMedia() {
   }
 }
 
-// Chamar a função
 calcularMedia();
 
 ?>

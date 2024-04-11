@@ -1,6 +1,6 @@
 <?php
 
-// Exercício 2 do ExerciciosFixacao-2024-1-Strings-Arrays.pdf
+// Crie uma função que receba, via passagem por referência, um array de números de telefone não formatados e formate cada telefone desse array com a função construída em phoneMask1.php.
 
 function mask($phone): string {
   $len = mb_strlen($phone);

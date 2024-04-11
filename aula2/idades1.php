@@ -19,8 +19,12 @@
 $usuarios = array();
 
 $nome = readline("Digite o nome do usuário: ");
-$idade = (int)readline("Digite a idade do usuário: ");
-$usuarios[$nome] = $idade;
+$idade = readline("Digite a idade do usuário: ");
+if (!is_numeric($idade)) {
+    echo 'Idade inválida', PHP_EOL;
+} else {
+    $usuarios[$nome] = $idade;
+}
 
 while (true) {
     $continuar = strtoupper(readline("Deseja incluir mais um? (S/N/R para remover): "));
@@ -39,9 +43,12 @@ while (true) {
         break;
     }
     $nome = readline("Digite o nome do usuário: ");
-    $idade = (int)readline("Digite a idade do usuário: ");
-
-    $usuarios[$nome] = $idade;
+    $idade = readline("Digite a idade do usuário: ");
+    if (!is_numeric($idade)) {
+        echo 'Idade inválida', PHP_EOL;
+    } else {
+        $usuarios[$nome] = $idade;
+    }
 }
 
 echo "\nLista de Usuários:\n";

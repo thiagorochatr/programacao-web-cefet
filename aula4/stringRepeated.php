@@ -1,6 +1,6 @@
 <?php
 
-// Exercício 3 do ExerciciosFixacao-2024-1-Strings-Arrays.pdf
+// Crie uma função que receba um array de números de telefone (formatados ou não) e retorne os telefones repetidos desse array (uma ocorrência de cada número repetido).
 
 $phones = [
   '12345678',

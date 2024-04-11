@@ -20,7 +20,7 @@ try{
     ]    
   );
 
-  $ps = $pdo->query('SELECT * FROM atleta ORDER BY nome');
+  $ps = $pdo->query('SELECT codigo, nome, peso, altura FROM atleta ORDER BY nome');
   $data = $ps->fetchAll();
 
   foreach ($data as $d) {
@@ -32,7 +32,8 @@ try{
   $ps = $pdo->query('SELECT AVG(peso) as media_peso, MAX(altura) as max_altura FROM atleta');
   $data = $ps->fetch();
 
-  echo 'Média dos pesos é ' . str_replace('.', ',', $data['media_peso']) . ' kg e a maior altura é ' . str_replace('.', ',', $data['max_altura']) . 'm' . PHP_EOL;
+  echo 'Média dos pesos: ' . str_replace('.', ',', $data['media_peso']) . PHP_EOL;
+  echo 'Maior altura: ' . str_replace('.', ',', $data['max_altura']) . 'm' . PHP_EOL;
 
 } catch (PDOException $e) {
   die('Erro: ' . $e->getMessage());

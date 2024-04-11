@@ -1,6 +1,11 @@
 <?php
 
-// Exercício 1 do ExerciciosFixacao-2024-1-Strings-Arrays.pdf
+// Crie uma função que retorne formatado um número de telefone recebido por argumento. O formato deve estar acordo com os exemplos fornecidos abaixo:
+// 8 dígitos: xxxx xxxx
+// 10 dígitos: (xx) xxxx-xxxx
+// 11 dígitos: (xx) x-xxxx-xxxx
+// 11 dígitos, começando com 0800 ou 0300: xxxx xxx xxxx
+// Se o número recebido pela função contiver algum caractere não numérico, a função deve retornar o próprio número recebido. O mesmo comportamento deve ocorrer caso a quantidade de dígitos do número não corresponder aos exemplificados na tabela acima.
 
 $phone = [
   'cleanedValue' => '',

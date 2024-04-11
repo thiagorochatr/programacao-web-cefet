@@ -29,10 +29,17 @@ class User {
 
 $usuarios = array();
 
-$obj = new User();
-$obj->name = readline("Digite o nome do usuário: ");
-$obj->age = (int)readline("Digite a idade do usuário: ");
-$usuarios[] = $obj;
+$name = readline("Digite o nome do usuário: ");
+$age = readline("Digite a idade do usuário: ");
+if(!is_numeric($age)) {
+    echo 'Invalid age', PHP_EOL;
+} else {
+    $obj = new User();
+    $obj->name = $name;
+    $obj->age = $age;
+
+    $usuarios[] = $obj;
+}
 
 while (true) {
     $continuar = strtoupper(readline("Deseja incluir mais um? (S/N/R para remover): "));
@@ -57,10 +64,18 @@ while (true) {
     if ($continuar !== 'S') {
         break;
     }
-    $obj = new User();
-    $obj->name = readline("Digite o nome do usuário: ");
-    $obj->age = (int)readline("Digite a idade do usuário: ");
-    $usuarios[] = $obj;
+
+    $name = readline("Digite o nome do usuário: ");
+    $age = readline("Digite a idade do usuário: ");
+    if(!is_numeric($age)) {
+        echo 'Invalid age', PHP_EOL;
+    } else {
+        $obj = new User();
+        $obj->name = $name;
+        $obj->age = $age;
+
+        $usuarios[] = $obj;
+    }
 }
 
 echo "\nLista de Usuários:\n";

@@ -1,4 +1,5 @@
 <?php
+
 // EXERCÍCIO:
 // 1) Crie a opção para ALTERAR um contato. Para isso,
 //    faça como a opção REMOVER e solicite a posição do
