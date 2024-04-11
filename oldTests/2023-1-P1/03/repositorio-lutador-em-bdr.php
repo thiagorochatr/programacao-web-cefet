@@ -1,5 +1,7 @@
 <?php
 
+// Implemente a interface repositorio-lutador.php, para o banco de dados relacional (BDR) indicado na questão 02. Na implementação, não utilize quaisquer funções de impressão (como echo ou die).
+
 namespace Mma;
 require_once 'repositorio-lutador.php';
 require_once 'lutador.php';
@@ -30,7 +32,7 @@ class RepoEmBdr implements RepositorioLutador {
         ]
       );
     } catch (PDOException $e) {
-      die('Erro: ' . $e->getMessage());
+      // die('Erro: ' . $e->getMessage());
     }
   }
 
@@ -46,7 +48,7 @@ class RepoEmBdr implements RepositorioLutador {
       ]);
 
     } catch (PDOException $e) {
-      die('Erro: ' . $e->getMessage());
+      // die('Erro: ' . $e->getMessage());
     }
   }
 
@@ -56,7 +58,7 @@ class RepoEmBdr implements RepositorioLutador {
       $ps = $pdo->prepare('DELETE FROM lutador WHERE id=?');
       $ps->execute([$id]);
     } catch (PDOException $e) {
-      die('Erro: ' . $e->getMessage());
+      // die('Erro: ' . $e->getMessage());
     }
   }
 

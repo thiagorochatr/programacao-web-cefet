@@ -1,5 +1,9 @@
 <?php
 
+// Considere a tabela em script.sql.
+// Faça um script que consulte e liste cada lutador, com todos os seus dados.
+// Após a listagem realizada no script anterior, imprima os seguintes dados, consultados do banco de dados: número total de lutadores, média das alturas, a maior altura e o maior peso.
+
 $pdo = null;
 try{
   $pdo = new PDO (
@@ -18,6 +22,7 @@ try{
   $data = funA($pdo);
   echo('-------------------------------' . PHP_EOL);
   funB($data);
+  
 } catch(PDOException $e) {
   die('Erro: ' . $e->getMessage());
 }

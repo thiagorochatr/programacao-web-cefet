@@ -1,4 +1,9 @@
 <?php
+
+// NÃO esteja no namespace "Mma"
+// i) solicite que o usuário informe o Id de dois lutadores;
+// ii) Utilizando controle de transação e o repositório repositorio-lutador-em-bdr.php, remova os lutadores informados.
+
 require_once 'repositorio-lutador-em-bdr.php';
 use Mma\RepoEmBdr;
 

@@ -1,0 +1,6 @@
+CREATE TABLE lutador (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  peso_em_quilos DECIMAL(5,2) NOT NULL,
+  altura_em_metros DECIMAL(3,2) NOT NULL  
+) ENGINE=INNODB;
