@@ -11,6 +11,16 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [Ler dados de arquivo CSV que contém data e comparar datas](/oldTests/2023-1-P1/01/01.php)
 - [Consultar do BD com número total, média e maior valor](/oldTests/2023-1-P1/02/02.php)
 - [Máscara de número de telefone #1](/oldTests/2023-1-P1/04/04.php)
+- [Máscara de número de telefone #2](/aula4/phoneMask1.php)
+- [Menu de interação com usuário, para CRUD em array (sem usar BD), e salvar/carregar para arquivo externo](/aula3/menu.php)
+- [Retornar valores repetidos de um array](/aula4/stringRepeated.php)
+- [Heredoc e tabela em HTML com dados de um array](/aula4/heredoc.php)
+- [Conectar com BD](/aula7/conexao.php)
+- [Insert em um BD #1](/aula6/inserir1.php)
+- [Insert em um BD #2](/aula6/inserir2.php)
+- [Read de um BD](/aula7/contas.php)
+- [Delete de um BD](/aula6/remover.php)
+- [Transferência bancária - controle de transação](/aula7/transf.php)
 - 
 
 ##### POO
@@ -24,4 +34,12 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [POO - interface com métodos para adicionar um objeto de tipo específico e remover a partir de ID](/oldTests/2023-1-P1/03/repositorio-lutador.php)
 - [POO - adicionar um objeto de tipo específico e remover a partir de ID](/oldTests/2023-1-P1/03/repositorio-lutador-em-bdr.php)
 - [POO - remover vários dados utilizando controle de transação](/oldTests/2023-1-P1/03/remover.php)
+- [POO - conexão com BD e read do BD](/aula7/poo/teste.php)
+- [POO - recuperar dados do BD e criar objetos com tipo específico correspondentes a cada registro](/aula7/poo/ContaBancaria.php)
+- [POO - inserir um novo objeto no BD e atualizar o objeto com o ID gerado pelo BD](/aula7/poo/ContaBancaria.php)
 - 
+
+
+Falta:
+extra
+oldTests/2021-1-P1
