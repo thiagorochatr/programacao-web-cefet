@@ -1,5 +1,11 @@
 <?php
 
+// Dado o array de inventores abaixo, 
+// a) Crie uma função que receba o array de inventores e retorne outro array contendo o sobrenome de cada inventor e uma chave indicando quantos anos viveu. Ex: [ [ "sobrenome" => 'Einstein', "viveu" => 77 ] ]
+// b) Crie uma função que receba o array de inventores e retorne a média de anos vividos por eles.
+// c) Crie uma função que receba o array de inventores e número de um século (ex.: 16) e retorne somente os inventores que viveram nele, mesmo que parcialmente.
+// d) Crie uma função que retorne os inventores ordenados pelo sobrenome.
+
 $inventores = [
   [ "nome" => 'Albert', "sobrenome" => 'Einstein', "nasc" => 1879,
   "morte" => 1955 ],
@@ -58,5 +64,4 @@ function funD($inventores) {
   return $inventores;
 }
 
-print_r(funD($inventores));
 ?>

@@ -21,6 +21,11 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [Read de um BD](/aula7/contas.php)
 - [Delete de um BD](/aula6/remover.php)
 - [Transferência bancária - controle de transação](/aula7/transf.php)
+- [Receber array e retornar um array com índice personalizado](/extra/stringsAndArrays/04.php#L22)
+- [Retornar itens de um array ordenado pelo nome](/extra/stringsAndArrays/04.php#L60)
+- [Contabilizar o número de ocorrência de itens de um array](/extra/stringsAndArrays/05.php)
+- [String replace com str_replace](/extra/stringsAndArrays/08.php)
+- [String replace com preg_replace](/extra/stringsAndArrays/07.php)
 - 
 
 ##### POO
@@ -41,5 +46,4 @@ Repository for the Web Programming discipline (Programação para Web), from the
 
 
 Falta:
-extra
 oldTests/2021-1-P1
