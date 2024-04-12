@@ -42,6 +42,7 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [POO - conexão com BD e read do BD](/aula7/poo/teste.php)
 - [POO - recuperar dados do BD e criar objetos com tipo específico correspondentes a cada registro](/aula7/poo/ContaBancaria.php)
 - [POO - inserir um novo objeto no BD e atualizar o objeto com o ID gerado pelo BD](/aula7/poo/ContaBancaria.php)
+- [POO - Projeto completo de CRUD em POO](/aula8/)
 - 
 
 
