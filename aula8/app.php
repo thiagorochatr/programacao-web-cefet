@@ -11,7 +11,7 @@ use acme1\Telefone;
 function menu($pdo) {
   $repo = new RepositorioClienteEmBDR($pdo);
   do{
-    echo PHP_EOL . 'MENU' . PHP_EOL;
+    echo PHP_EOL, 'MENU', PHP_EOL, str_repeat( '-', 40 ), PHP_EOL;
     echo '0) Sair' . PHP_EOL;
     echo '1) Cadastrar' . PHP_EOL;
     echo '2) Listar' . PHP_EOL;
@@ -40,18 +40,34 @@ function menu($pdo) {
 function cadastrar($repo) {
   $nome = readline('Nome: ');
   $arrTel = [];
-  $tel = readline('Telefone: ');
   do {
-    $x = new Telefone($tel);
-    $arrTel [] = $x;
-    $tel = readline('Telefone: ');
+    $tel = readline('Telefone (qq coisa para sair): ');
+    if(mb_strlen($tel) == 11 AND is_numeric($tel)) {
+      $x = new Telefone($tel);
+      $arrTel [] = $x;
+    }
   } while (mb_strlen($tel) == 11 AND is_numeric($tel));
   $cliente = new Cliente($nome, $arrTel);
-  $repo->adicionar($cliente);
+
+  $prblms = $cliente->validar();
+  if (!empty($prblms)){
+    echo implode("\n", $prblms);
+    return;
+  }
+
+  try {
+    $repo->adicionar($cliente);
+  } catch (Exception $e) {
+    echo $e->getMessage(), PHP_EOL;
+  }
 }
 
 function listar($repo) {
-  $data = $repo->todos();
+  try {
+    $data = $repo->todos();
+  } catch (Exception $e) {
+    echo $e->getMessage(), PHP_EOL;
+  }
   $tels = $data[0];
   $clientes = $data[1];
 
@@ -66,7 +82,11 @@ function listar($repo) {
 
 function remover($repo) {
   $id = readline('Id: ');
-  $repo->removerPeloId($id);
+  try {
+    $repo->removerPeloId($id);
+  } catch (Exception $e) {
+    echo $e->getMessage(), PHP_EOL;
+  }
 }
 
 function connectDB() {

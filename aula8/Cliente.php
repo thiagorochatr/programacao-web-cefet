@@ -5,7 +5,7 @@ namespace acme1;
 class Cliente {
   public int $id;
   public string $nome;
-  public $tel;
+  public $tel = [];
 
   public function __construct($nome, $tels, $id = 0) {
     $this->nome = $nome;
