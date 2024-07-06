@@ -1,0 +1,14 @@
+EXERCÍCIOS
+
+1) Conforme o modelo UML informado, considere que um Contato possui uma Cidade.
+Implemente uma forma de cadastrar um contato, de forma que a cidade possa ser
+selecionada com um campo "select".
+
+2) Faça a listagem de contatos, em que apareça os dados do
+   contato (id, nome, telefone) e o nome de sua cidade.
+
+3) Adicione a remoção do contato à listagem criada anteriormente.
+
+4) Adicione a possibilidade de alterar um contato. Considere
+   que ao abrir o formulário de alteração, a cidade atual do contato já
+   apareça selecionada.
