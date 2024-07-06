@@ -48,3 +48,5 @@ Repository for the Web Programming discipline (Programação para Web), from the
 
 Falta:
 oldTests/2021-1-P1
+
+Exercício aula 11: fazer a totalização da listagem de contas e a alteração de conta.
