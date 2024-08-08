@@ -5,7 +5,8 @@
 // 10 dígitos: (xx) xxxx-xxxx
 // 11 dígitos: (xx) x-xxxx-xxxx
 // 11 dígitos, começando com 0800 ou 0300: xxxx xxx xxxx
-// Se o número recebido pela função contiver algum caractere não numérico, a função deve retornar o próprio número recebido. O mesmo comportamento deve ocorrer caso a quantidade de dígitos do número não corresponder aos exemplificados na tabela acima.
+// Se o número recebido pela função contiver algum caractere não numérico, a função deve retornar o próprio número recebido.
+// O mesmo comportamento deve ocorrer caso a quantidade de dígitos do número não corresponder aos exemplificados na tabela acima.
 
 $phone = [
   'cleanedValue' => '',

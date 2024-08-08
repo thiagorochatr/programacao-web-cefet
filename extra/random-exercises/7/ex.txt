@@ -1,0 +1,25 @@
+Sistema de Gerenciamento de Biblioteca
+Crie um sistema de gerenciamento de biblioteca usando POO em PHP. O sistema deve incluir as seguintes classes e funcionalidades:
+
+1. Classe Livro:
+- Atributos: título, autor, ano de publicação, disponível (boolean)
+- Métodos: construtor, getters e setters para todos os atributos
+
+2. Classe Membro:
+- Atributos: nome, ID do membro, lista de livros emprestados (array)
+- Métodos: construtor, getters e setters, emprestarLivro(), devolverLivro()
+
+3. Classe Biblioteca:
+- Atributos: nome da biblioteca, lista de livros (array), lista de membros (array)
+- Métodos: adicionarLivro(), removerLivro(), adicionarMembro(), removerMembro(), emprestarLivro(), devolverLivro(), listarLivrosDisponíveis(), listarMembros()
+
+Requisitos:
+1. Implemente todas as classes mencionadas acima com seus respectivos atributos e métodos.
+2. Use encapsulamento apropriado (private, protected, public) para os atributos e métodos.
+3. Implemente a lógica para emprestar e devolver livros, garantindo que um livro só possa ser emprestado se estiver disponível.
+4. Adicione verificações para garantir que um membro não possa emprestar mais de 3 livros ao mesmo tempo.
+5. Implemente um método na classe Biblioteca para listar todos os livros emprestados e por quais membros.
+6. Crie um script de teste que demonstre o uso de todas as funcionalidades implementadas.
+
+Desafio extra (opcional):
+Implemente uma interface de linha de comando simples para interagir com o sistema de biblioteca.

@@ -20,8 +20,8 @@ class Aplicacao {
   }
 
   public function iniciar() {
+    $this->produtos = $this->repositorio->carregarProdutos();
     do {
-      $this->produtos = $this->repositorio->carregarProdutos();
       $opcao = $this->exibirMenu();
       switch ($opcao) {
         case 0:
@@ -32,6 +32,7 @@ class Aplicacao {
           break;
         case 2:
           $this->cadastrarProduto();
+          $this->produtos = $this->repositorio->carregarProdutos();
           break;
         default:
           echo "Opção inválida!\n";
