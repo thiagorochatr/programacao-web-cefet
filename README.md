@@ -26,6 +26,7 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [Contabilizar o número de ocorrência de itens de um array](/extra/stringsAndArrays/05.php)
 - [String replace com str_replace](/extra/stringsAndArrays/08.php)
 - [String replace com preg_replace](/extra/stringsAndArrays/07.php)
+- [Ordem alfabética](/extra/stringsAndArrays/04.php#L60)
 - 
 
 ##### POO
