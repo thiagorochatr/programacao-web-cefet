@@ -1,0 +1,6 @@
+1) Crie uma interface para representara view.
+Uma que tenha o código para console e
+Faça a controladora receber a instância da visão (interface) pelo construtor.
+
+2) Implemente uma nova operação na calculadora, que permita dividir dois números.
+Ajuste as interfaces de usuário e a aplicação para permitir que o usuário escolha a operação desejada (soma ou divisão).
