@@ -47,6 +47,10 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - 
 
 
+php -S localhost:8080
+
+
+
 Falta:
 oldTests/2021-1-P1
 
