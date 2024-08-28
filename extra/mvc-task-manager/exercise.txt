@@ -14,7 +14,7 @@ CREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     description TEXT,
-    status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',
+    done BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -23,8 +23,6 @@ Database details:
 - Database name: task_manager
 - Location: localhost
 - Charset: utf8
-- Username: task_user
-- Password: task_password
 
 Now, let's outline the requirements for your CRUD application:
 
@@ -32,7 +30,6 @@ Now, let's outline the requirements for your CRUD application:
 - models/
 - views/
 - controllers/
-- config/
 
 2. Implement a Task model that interacts with the database.
 
@@ -59,14 +56,14 @@ Requirements for each CRUD operation:
 Create:
 - Allow users to input a task title and description
 - Validate that the title is not empty and has a maximum of 100 characters
-- Set the initial status as "pending"
+- Set the initial done as "false"
 
 Read:
 - Display all tasks in a table format
-- Show the task ID, title, status, and created date
+- Show the task ID, title, done, and created date
 
 Update:
-- Allow users to edit the title, description, and status of a task
+- Allow users to edit the title, description, and "done" of a task
 - Validate the input as in the Create operation
 - Update the 'updated_at' timestamp automatically
 
