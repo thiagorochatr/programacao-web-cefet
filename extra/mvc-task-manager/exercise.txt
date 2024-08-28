@@ -1,0 +1,76 @@
+Task Manager
+
+A simple use case to develop a CRUD application using PHP and the MVC pattern. I'll provide you with the database script and connection details, and then outline the requirements for your CRUD application.
+
+Let's create a simple "Task Manager" application. Here's the database script to create a single table:
+
+<< script.sql >>
+
+CREATE DATABASE task_manager;
+
+USE task_manager;
+
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+Database details:
+- Database name: task_manager
+- Location: localhost
+- Charset: utf8
+- Username: task_user
+- Password: task_password
+
+Now, let's outline the requirements for your CRUD application:
+
+1. Create a PHP MVC structure with the following directories:
+- models/
+- views/
+- controllers/
+- config/
+
+2. Implement a Task model that interacts with the database.
+
+3. Create a TaskController with the following methods:
+- index() - List all tasks
+- create() - Show the form to create a new task
+- store() - Save a new task to the database
+- edit() - Show the form to edit an existing task
+- update() - Update an existing task in the database
+- delete() - Delete a task from the database
+
+4. Implement the following views:
+- task_list.php - Display all tasks in a table
+- task_form.php - A form for creating and editing tasks
+
+5. Create a simple routing system to map URLs to controller actions.
+
+6. Implement proper input validation and error handling.
+
+7. Use prepared statements to prevent SQL injection.
+
+Requirements for each CRUD operation:
+
+Create:
+- Allow users to input a task title and description
+- Validate that the title is not empty and has a maximum of 100 characters
+- Set the initial status as "pending"
+
+Read:
+- Display all tasks in a table format
+- Show the task ID, title, status, and created date
+
+Update:
+- Allow users to edit the title, description, and status of a task
+- Validate the input as in the Create operation
+- Update the 'updated_at' timestamp automatically
+
+Delete:
+- Remove the task from the database
+
+Your task is to develop this CRUD application following the MVC pattern and meeting all the requirements listed above.
