@@ -30,6 +30,7 @@ class ModelCalculadora {
     } else if($operacao == 'somar') {
       return $this->somar($x,$y);
     }
+    throw new RuntimeException( 'Operação não suportada.' );
   }
 }
 

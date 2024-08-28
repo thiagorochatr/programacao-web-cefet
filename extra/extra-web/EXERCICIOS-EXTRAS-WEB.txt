@@ -1,0 +1,46 @@
+EXERCÍCIOS EXTRAS
+=================
+
+A empresa Acme Ltda. agora necessita que seja realizado um controle de empresas parceiras e dos serviços contratatos delas.
+
++------------------+                          +-------------------+                  +-------------------+
+| EmpresaParceira  |                          | ServiçoContratado |                  |      Serviço      |
++------------------+                          +-------------------+                  +-------------------+
+| nome: string     |<--1-------------------*--| valor: double     |--*-----------1-->| descricao: string |
+| cnpj: string     |    < é contratato para   | inicio: Date      |    realiza >     +-------------------+
+| telefone: string |                          | termino: Date     |
++------------------+                          +-------------------+
+
+
+1) Crie as classes correspondentes em PHP, considerando a inclusão de um atributo "id" em cada uma.
+
+2) Implemente o banco de dados para as classes acima e insira alguns dados fictícios.
+
+// empresa parceira
+
+3) Faça uma listagem de empresas parceiras. Essa listagem deve consultar as empresas parceiras (objetos de EmpresaParceira) a partir de um repositório.
+
+4) Faça uma página que permita cadastrar um empresa parceira. Utilize o repositório para adicionar uma empresa parceira (objeto de EmpresaParceira).
+   Quando houver um cadastro correto, redirecione o usuário para a listagem de empresas parceiras. 
+   
+5) Adicione à listagem de empresa parceiras uma opção de remover uma empresa parceira. Utilize o repositório para realizar a operação de remoção.
+
+6) Adicione à listagem de empresa parceiras uma opção de alterar um empresa parceira. A empresa parceira escolhida deve ser exibida em um formulário,
+   similar ao de cadastro, para alteração. Utilize o repositório para realizar a operação de atualização (objeto de EmpresaParceira).
+   
+7) Adicione à listagem de empresas parceiras, acima dela, um formulário que permita escolher um dos campos da empresa parceira, informar o valor
+   correspondente e acionar uma botão "Pesquisar" que mostre apenas as empresas que contenham o valor informado, para o campo escolhido.
+   DICA: Para isso, faça com que o método do repositório que consulta as empresas parceiras receba, opcionalmente, um campo e um valor, para filtragem.
+		 Quando informados, eles são utilizados para a filtragem, tomando o cuidado com ataques de injeção de SQL.
+		 
+8) Adicione à listagem, para cada empresa, uma opção "Contratar Serviço", que leva à uma página de contratação de serviço.
+   Essa página deve exibir a empresa correspondente (com nome e cnpj), pré-selecionada da listagem, e permitir selecionar o serviço desejado
+   (via campo select) e entrar com o valor do serviço e as datas de início e término.
+   Crie um respositório para consultar os serviços (para o select) e outro para cadastrar o serviço contratado.
+   Utilize controle de transação para cadastrar o serviço contratado.
+
+9) Faça uma listagem de serviços contratatos, contendo as seguintes colunas:
+   Empresa (nome), CNPJ, Serviço (descrição), Valor (R$), Início, Término.
+   Exiba a listagem de forma ordenada pelo início, de forma decrescente.
+   
+   

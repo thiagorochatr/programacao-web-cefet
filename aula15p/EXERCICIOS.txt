@@ -1,0 +1,25 @@
+1) Crie um banco de dados aula15, que possa armazenar contas.
+
+2) Crie uma classe Conta e uma classe RepositorioConta, para realizar
+   as operações de persistência.
+
+3) Façam com que as rotas anteriormente criadas funcionem com os dados
+   mantidos no banco de dados.
+---
+4) Crie na API RESTful um endereço que permita cadastrar uma conta.
+
+5) Crie na API RESTful um endereço que permita alterar uma conta.
+
+>> Para testar a API, utilize o curl com o parâmetro -X, seguido do método
+   HTTP. Por exemplo: -X DELETE.
+   Para enviar dados, utilize -d seguido do dado entre aspas, ex.:
+        -d "{ \"descricao\": \"Pagar Internet\", \"valor\": 90.00 }"
+   Para enviar cabeçalhos, utilize -H seguido do cabeçalho entre aspas, ex:
+        -H "Content-Type: application/json"
+
+6) Faça com que a obtenção de contas (ou seja, o GET para '/contas-a-pagar')
+   avalie o formato desejado pelo usuário, pelo cabeçalho 'Accept'.
+   Caso o formato seja "application/json", envie as contas como JSON.
+   Caso seja "text/html", retorne uma página HTML que contenha uma
+   tabela contendo os dados das contas. Use a função get_all_headers()
+   para obter os cabeçalhos de requisição enviados (array).
