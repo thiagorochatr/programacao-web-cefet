@@ -1,6 +1,7 @@
 <?php
 require_once 'src/RepositorioEquipamentoEmBDR.php';
 require_once 'src/Situacao.php';
+
 function gerarLinhasComEquipamentos() {
     $equipamentos = [];
     try {
@@ -25,6 +26,7 @@ function gerarLinhasComEquipamentos() {
         HTML;
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

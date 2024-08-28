@@ -1,5 +1,6 @@
 <?php
 require_once 'Categoria.php';
+
 class Equipamento {
     public int $id;
     public string $codigo;
@@ -24,3 +25,5 @@ class Equipamento {
         $this->categoria = $categoria;
     }
 }
+
+?>

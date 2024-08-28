@@ -38,3 +38,5 @@ class RepositorioEquipamentoEmBDR {
         return $equipamentos;
     }
 }
+
+?>
