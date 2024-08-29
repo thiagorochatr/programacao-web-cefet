@@ -17,12 +17,14 @@ class TaskList {
     HTML;
 
     foreach($tasks as $t) {
+      $doneEmoji = $t['done'] ? '✅' : '❌';
+
       $html .= <<<HTML
         <tr>
           <td>{$t['id']}</td>
           <td>{$t['title']}</td>
           <td>{$t['description']}</td>
-          <td>{$t['done']}</td>
+          <td>{$doneEmoji}</td>
           <td>{$t['created_at']}</td>
         </tr>
       HTML;

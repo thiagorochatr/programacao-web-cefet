@@ -22,6 +22,18 @@ class RepositorioTaskEmBDR implements RepositorioTask {
       throw new TaskException($e->getMessage());
     }
   } // List all tasks. Como objeto da classe Task.
+
+  function getTaskByID(int $id) {
+    try {
+      $pdo = $this->pdo;
+      $ps = $pdo->prepare('SELECT * FROM tasks WHERE id = ?');
+      $ps->execute([$id]);
+      $task = $ps->fetch();
+      return $task;
+    } catch (PDOException $e) {
+      throw new TaskException($e->getMessage());
+    }
+  } // List all tasks. Como objeto da classe Task.
   
   function createTask(Task &$t) {
     try {
