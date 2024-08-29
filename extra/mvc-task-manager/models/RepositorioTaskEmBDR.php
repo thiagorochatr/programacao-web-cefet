@@ -1,0 +1,72 @@
+<?php
+
+require_once 'Task.php';
+require_once 'TaskException.php';
+require_once 'RepositorioTask.php';
+
+class RepositorioTaskEmBDR implements RepositorioTask {
+  private PDO $pdo;
+
+  public function __construct(PDO $pdo) {
+    $this->pdo = $pdo;
+  }
+
+  function getTasks() {
+    try {
+      $pdo = $this->pdo;
+      $ps = $pdo->prepare('SELECT * FROM tasks');
+      $ps->execute();
+      $tasks = $ps->fetchAll();
+      return $tasks;
+    } catch (PDOException $e) {
+      throw new TaskException($e->getMessage());
+    }
+  } // List all tasks. Como objeto da classe Task.
+  
+  function createTask(Task &$t) {
+    try {
+      $pdo = $this->pdo;
+      $ps = $pdo->prepare('INSERT INTO tasks (title, description, done, created_at, updated_at) VALUES (?,?,?,?,?)');
+      $ps->execute([
+        $t['title'],
+        $t['description'],
+        $t['done'],
+        $t['created_at'],
+        $t['updated_at']
+      ]);
+      $t->id = (int) $pdo->lastInsertId();
+    } catch (PDOException $e) {
+      throw new TaskException($e->getMessage());
+    }
+  } // Create a new task and save to the database. Receber o ID gerado pelo banco de dados.
+  
+  function updateTask(Task $t) {
+    try {
+      $pdo = $this->pdo;
+      $ps = $pdo->prepare('UPDATE tasks SET title = ?, description = ?, done = ?, updated_at = ? WHERE id = ?');
+      $ps->execute([
+        $t['title'],
+        $t['description'],
+        $t['done'],
+        $t['updated_at'],
+        $t['id'],
+      ]);
+    } catch (PDOException $e) {
+      throw new TaskException($e->getMessage());
+    }
+  } // Update an existing task in the database.
+  
+  function deleteTaskByID(int $id) {
+    try {
+      $pdo = $this->pdo;
+      $ps = $pdo->prepare('DELETE FROM tasks WHERE id = ?');
+      $ps->execute([$id]);
+    } catch (PDOException $e) {
+      throw new TaskException($e->getMessage());
+    }
+  } // Delete a task from the database.
+
+
+}
+
+?>
