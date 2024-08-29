@@ -11,6 +11,7 @@ class TaskList {
             <th>Description</th>
             <th>Done</th>
             <th>Created Date</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@ class TaskList {
 
     foreach($tasks as $t) {
       $doneEmoji = $t['done'] ? '✅' : '❌';
+      $urlRemocao = "remover.php?id={$t['id']}";
 
       $html .= <<<HTML
         <tr>
@@ -26,6 +28,13 @@ class TaskList {
           <td>{$t['description']}</td>
           <td>{$doneEmoji}</td>
           <td>{$t['created_at']}</td>
+          <td>
+            <form method="POST" action="http://localhost:8080/index.php/tasks">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="id" id="id" value="{$t['id']}">
+              <input type="submit" value="Remover task">
+            </form>
+          </td>
         </tr>
       HTML;
     }
