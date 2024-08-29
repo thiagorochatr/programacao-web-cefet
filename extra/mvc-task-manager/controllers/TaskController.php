@@ -45,8 +45,12 @@ class TaskController {
     $this->repositorio->deleteTaskByID($_POST['id']);
   }
 
+  function update() { // Update an existing task in the database
+    $this->repositorio->updateTaskDoneByID($_POST['id']);
+  }
+
 // - edit() - Show the form to edit an existing task
-// - update() - Update an existing task in the database
+
 }
 
 ?>

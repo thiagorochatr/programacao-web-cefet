@@ -19,7 +19,18 @@ class TaskList {
 
     foreach($tasks as $t) {
       $doneEmoji = $t['done'] ? '✅' : '❌';
-
+      
+      $updateForm = '';
+      if (!$t['done']) {
+        $updateForm = <<<HTML
+          <form method="POST" action="http://localhost:8080/index.php/tasks">
+            <input type="hidden" name="_method" value="UPDATE">
+            <input type="hidden" name="id" id="id" value="{$t['id']}">
+            <input type="submit" value="Marcar como feita">
+          </form>
+        HTML;
+      }
+    
       $html .= <<<HTML
         <tr>
           <td>{$t['id']}</td>
@@ -28,6 +39,7 @@ class TaskList {
           <td>{$doneEmoji}</td>
           <td>{$t['created_at']}</td>
           <td>
+            {$updateForm}
             <form method="POST" action="http://localhost:8080/index.php/tasks">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="id" id="id" value="{$t['id']}">

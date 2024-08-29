@@ -9,7 +9,7 @@ interface RepositorioTask {
 
   function createTask(Task &$t); // Create a new task and save to the database. Receber o ID gerado pelo banco de dados.
   
-  function updateTask(Task $t); // Update an existing task in the database.
+  function updateTaskDoneByID(int $id); // Update an existing task in the database.
   
   function deleteTaskByID(int $id); // Delete a task from the database.
 }

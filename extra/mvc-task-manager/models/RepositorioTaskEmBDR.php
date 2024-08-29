@@ -49,16 +49,14 @@ class RepositorioTaskEmBDR implements RepositorioTask {
     }
   } // Create a new task and save to the database. Receber o ID gerado pelo banco de dados.
   
-  function updateTask(Task $t) {
+  function updateTaskDoneByID(int $id) {
     try {
       $pdo = $this->pdo;
-      $ps = $pdo->prepare('UPDATE tasks SET title = ?, description = ?, done = ?, updated_at = ? WHERE id = ?');
+      $ps = $pdo->prepare('UPDATE tasks SET done = ?, updated_at = ? WHERE id = ?');
       $ps->execute([
-        $t['title'],
-        $t['description'],
-        $t['done'],
-        $t['updated_at'],
-        $t['id'],
+        1,
+        (new DateTime())->format('Y-m-d H:i:s'),
+        $id
       ]);
     } catch (PDOException $e) {
       throw new TaskException($e->getMessage());

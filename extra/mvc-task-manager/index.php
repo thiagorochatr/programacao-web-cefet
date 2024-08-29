@@ -45,7 +45,10 @@ if (mb_strpos($url, '/tasks') !== false) {
 
     } else if ($_POST['_method'] === 'UPDATE') {
       
-      echo '<p>Update</p>';
+      $controller->update();
+      http_response_code(302); // Redirect status code
+      header('Location: index.php/tasks');
+      exit();
 
     }
 
