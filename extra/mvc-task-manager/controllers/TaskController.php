@@ -42,10 +42,6 @@ class TaskController {
   }
   
   function delete() { // Delete a task from the database
-    // if(!isset($_GET['id'])) {
-    //   throw new TaskException('ID não preenchido.');
-    // }
-
     $this->repositorio->deleteTaskByID($_POST['id']);
   }
 

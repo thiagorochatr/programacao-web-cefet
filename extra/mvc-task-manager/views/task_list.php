@@ -19,7 +19,6 @@ class TaskList {
 
     foreach($tasks as $t) {
       $doneEmoji = $t['done'] ? '✅' : '❌';
-      $urlRemocao = "remover.php?id={$t['id']}";
 
       $html .= <<<HTML
         <tr>
