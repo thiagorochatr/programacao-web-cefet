@@ -26,13 +26,10 @@ class RepositorioTaskEmBDR implements RepositorioTask {
   function createTask(Task &$t) {
     try {
       $pdo = $this->pdo;
-      $ps = $pdo->prepare('INSERT INTO tasks (title, description, done, created_at, updated_at) VALUES (?,?,?,?,?)');
+      $ps = $pdo->prepare('INSERT INTO tasks (title, description) VALUES (?,?)');
       $ps->execute([
-        $t['title'],
-        $t['description'],
-        $t['done'],
-        $t['created_at'],
-        $t['updated_at']
+        $t->title,
+        $t->description
       ]);
       $t->id = (int) $pdo->lastInsertId();
     } catch (PDOException $e) {
