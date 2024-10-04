@@ -27,7 +27,6 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [String replace com str_replace](/extra/stringsAndArrays/08.php)
 - [String replace com preg_replace](/extra/stringsAndArrays/07.php)
 - [Ordem alfabética](/extra/stringsAndArrays/04.php#L60)
-- 
 
 ##### POO
 
@@ -44,15 +43,5 @@ Repository for the Web Programming discipline (Programação para Web), from the
 - [POO - recuperar dados do BD e criar objetos com tipo específico correspondentes a cada registro](/aula7/poo/ContaBancaria.php)
 - [POO - inserir um novo objeto no BD e atualizar o objeto com o ID gerado pelo BD](/aula7/poo/ContaBancaria.php)
 - [POO - Projeto completo de CRUD em POO](/aula8/)
-- 
-
 
 php -S localhost:8080
-
-
-
-Falta:
-oldTests/2021-1-P1
-
-Exercício aula11: fazer a totalização da listagem de contas e a alteração de conta.
-aula12
